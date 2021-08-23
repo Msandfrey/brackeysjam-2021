@@ -27,12 +27,12 @@ namespace IndieWizards.Enemy
             health = GetComponent<Health>();
             health.onDeath += HandleDeath;
 
-            GetComponent<Rigidbody>().velocity = new Vector3(-speed, 0, 0);
         }
 
         // Update is called once per frame
         void Update()
         {
+            GetComponent<Rigidbody>().velocity = transform.right * -speed;
             //for testing
             if (isDead)
             {

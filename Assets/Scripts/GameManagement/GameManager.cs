@@ -10,13 +10,17 @@ namespace IndieWizards.GameManagement
     {
         public GameObject[] listOfWaves;
         [SerializeField]
+        private GameObject startUI;
+        [SerializeField]
+        private GameObject winLoseUI;
+        [SerializeField]
         private GameObject textMesh;
         [SerializeField]
         private float timeDelayStartWave = 1f;
         private int currentWave = 0;
-        [SerializeField]
         private HashSet<GameObject> enemies;
         private bool isWaveSpawned = false;
+        private bool isWaitForStart = true;
 
         public int score;
 
@@ -29,14 +33,16 @@ namespace IndieWizards.GameManagement
         // Start is called before the first frame update
         void Start()
         {
-        
+            Time.timeScale = 0;
         }
 
         // Update is called once per frame
         void Update()
         {
+            if (isWaitForStart && Input.GetKeyDown(KeyCode.X)) { isWaitForStart = false; Time.timeScale = 1; startUI.SetActive(false); }
+            if (isWaitForStart) { return; }
             if (Input.GetKeyDown(KeyCode.P)) { Time.timeScale = Time.timeScale == 0 ? 1 : 0; }//need better pause
-            if(currentWave >= listOfWaves.Length) { SceneManager.LoadScene("End"); }
+            if(currentWave >= listOfWaves.Length) { winLoseUI.SetActive(true); Time.timeScale = 0; }//different end
             if(enemies.Count <= 0 && listOfWaves.Length > currentWave && isWaveSpawned)
             {
                 NextWave();
