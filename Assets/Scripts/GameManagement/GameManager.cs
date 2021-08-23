@@ -13,6 +13,8 @@ namespace IndieWizards.GameManagement
         [SerializeField]
         private HashSet<GameObject> enemies;
 
+        public int score;
+
         private void Awake()
         {
             enemies = new HashSet<GameObject>();
@@ -37,7 +39,7 @@ namespace IndieWizards.GameManagement
         void Update()
         {
             if(currentWave >= listOfWaves.Length) { SceneManager.LoadScene("End"); }
-            if(enemies.Count <= 0 || listOfWaves.Length > 0)
+            if(enemies.Count <= 0 && listOfWaves.Length > 0)
             {
                 NextWave();
             }
