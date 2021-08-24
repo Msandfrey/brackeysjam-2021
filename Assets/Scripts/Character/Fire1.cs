@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace IndieWizards.Character
 {
-    public class Fire1 : MonoBehaviour
+    public class Fire1 : Fire
     {
         [SerializeField]
         private GameObject projectile;
@@ -16,21 +16,14 @@ namespace IndieWizards.Character
         private float ForceMultiplier = 1;
         [SerializeField]
         Rigidbody m_Rigidbody;
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
 
-        // Update is called once per frame
-        void Update()
+        public override void Shoot(int damage)
         {
-            if (Input.GetKeyUp(KeyCode.Escape))
-            {
-                GameObject projectileInstance = Instantiate(projectile, spawnPoint.position, spawnPoint.localRotation);
-                m_Rigidbody = projectileInstance.GetComponent<Rigidbody>();
-                m_Rigidbody.AddForce(spawnPoint.forward * LaunchForce * ForceMultiplier);
-            }
+            GameObject projectileInstance = Instantiate(projectile, spawnPoint.position, spawnPoint.localRotation);
+            projectileInstance.GetComponent<DamageBullets>().SetDamage(damage);
+            projectileInstance.GetComponent<DamageBullets>().SetOwner(transform.parent.gameObject);
+            m_Rigidbody = projectileInstance.GetComponent<Rigidbody>();
+            m_Rigidbody.AddForce(spawnPoint.right * LaunchForce * ForceMultiplier);
         }
 
         public void FireBulletStraight(int damage)
