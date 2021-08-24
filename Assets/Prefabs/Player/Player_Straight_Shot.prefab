@@ -57,7 +57,6 @@ GameObject:
   m_Component:
   - component: {fileID: 722281542352401024}
   - component: {fileID: 57595230053199154}
-  - component: {fileID: 809710398387222652}
   m_Layer: 0
   m_Name: FiringPoint3
   m_TagString: Untagged
@@ -93,24 +92,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 7209064194344666876, guid: 0ba501369cc695040a646d26ccc2caf9, type: 3}
   spawnPoint: {fileID: 722281542352401024}
-  LaunchForce: 1000
-  ForceMultiplier: 1
---- !u!114 &809710398387222652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958932859265775733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d065b5baadd0ecf448279814a8a3959f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 7209064194344666876, guid: 0ba501369cc695040a646d26ccc2caf9, type: 3}
-  spawnPoint1: {fileID: 2666664129866772844}
-  spawnPoint2: {fileID: 6657169191022579339}
-  spawnPoint3: {fileID: 722281542352401024}
   LaunchForce: 1000
   ForceMultiplier: 1
 --- !u!1 &2666664129866772845
@@ -383,7 +364,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6657169191022579339}
   - component: {fileID: 2543296993339091157}
-  - component: {fileID: 1925047725111151020}
   m_Layer: 0
   m_Name: FiringPoint2
   m_TagString: Untagged
@@ -419,23 +399,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 7209064194344666876, guid: 0ba501369cc695040a646d26ccc2caf9, type: 3}
   spawnPoint: {fileID: 6657169191022579339}
-  LaunchForce: 1000
-  ForceMultiplier: 1
---- !u!114 &1925047725111151020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8723010310836984557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d065b5baadd0ecf448279814a8a3959f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 7209064194344666876, guid: 0ba501369cc695040a646d26ccc2caf9, type: 3}
-  spawnPoint1: {fileID: 2666664129866772844}
-  spawnPoint2: {fileID: 6657169191022579339}
-  spawnPoint3: {fileID: 722281542352401024}
   LaunchForce: 1000
   ForceMultiplier: 1
