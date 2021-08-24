@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1507949207280329618}
   - component: {fileID: 6913817972382289598}
   - component: {fileID: 7593630574549862395}
+  - component: {fileID: 3727849875030815225}
   m_Layer: 0
   m_Name: Player_Triple_Shot
   m_TagString: Player
@@ -112,6 +113,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+--- !u!114 &3727849875030815225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2767281446854966680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18b61747d3d12fe4297b0b07ee5d06af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fireMode: 0
+  damage: 1
+  fireStraight1_1: {fileID: 0}
+  fireStraight2_4: {fileID: 0}
+  fireStraight2_5: {fileID: 0}
+  fireStraight1_3: {fileID: 0}
 --- !u!1001 &7439570702886673531
 PrefabInstance:
   m_ObjectHideFlags: 0

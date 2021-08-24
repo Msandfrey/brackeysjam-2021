@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace IndieWizards.Character
 {
-    public class Fire2 : MonoBehaviour
+    public class Fire2 : Fire
     {
         [SerializeField]
         private GameObject projectile;
@@ -59,6 +59,11 @@ namespace IndieWizards.Character
                 transform.rotation = Quaternion.identity;
                 shootingDuration = 0;
             }
+        }
+
+        public override void Shoot(int damage)
+        {
+
         }
     }
 }

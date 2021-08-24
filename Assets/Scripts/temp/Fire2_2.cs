@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace IndieWizards.Character
 {
-    public class Fire1 : Fire
+    public class Fire2_2 : Fire
     {
         [SerializeField]
         private GameObject projectile;
@@ -17,15 +17,6 @@ namespace IndieWizards.Character
         Rigidbody m_Rigidbody;
 
         public override void Shoot(int damage)
-        {
-            GameObject projectileInstance = Instantiate(projectile, spawnPoint.position, spawnPoint.localRotation);
-            projectileInstance.GetComponent<DamageBullets>().SetDamage(damage);
-            projectileInstance.GetComponent<DamageBullets>().SetOwner(transform.parent.gameObject);
-            m_Rigidbody = projectileInstance.GetComponent<Rigidbody>();
-            m_Rigidbody.AddForce(spawnPoint.right * LaunchForce * ForceMultiplier);
-        }
-
-        public void FireBulletStraight(int damage)
         {
             GameObject projectileInstance = Instantiate(projectile, spawnPoint.position, spawnPoint.localRotation);
             projectileInstance.GetComponent<DamageBullets>().SetDamage(damage);
