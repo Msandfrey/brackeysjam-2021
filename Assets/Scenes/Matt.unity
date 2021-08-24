@@ -1791,7 +1791,7 @@ GameObject:
   - component: {fileID: 1843300651423208258}
   m_Layer: 0
   m_Name: Player_Straight_Shot
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
