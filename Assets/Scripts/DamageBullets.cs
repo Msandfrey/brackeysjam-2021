@@ -35,15 +35,18 @@ public class DamageBullets : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag.Equals("Enemy") && !owner.tag.Equals("Enemy"))
+        if(other != null && owner != null)
         {
-            other.GetComponent<Health>().TakeDamage(damage);
-            Destroy(gameObject);
-        }
-        if(other.tag.Equals("Player") && !owner.tag.Equals("Player"))
-        {
-            other.GetComponent<Health>().TakeDamage(damage);
-            Destroy(gameObject);
+            if (other.tag.Equals("Enemy") && !owner.tag.Equals("Enemy"))
+            {
+                other.GetComponent<Health>().TakeDamage(damage);
+                Destroy(gameObject);
+            }
+            if (other.tag.Equals("Player") && !owner.tag.Equals("Player"))
+            {
+                other.GetComponent<Health>().TakeDamage(damage);
+                Destroy(gameObject);
+            }
         }
     }
 }
