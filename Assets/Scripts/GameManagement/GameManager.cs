@@ -42,7 +42,7 @@ namespace IndieWizards.GameManagement
             if (isWaitForStart && Input.GetKeyDown(KeyCode.X)) { isWaitForStart = false; Time.timeScale = 1; startUI.SetActive(false); }
             if (isWaitForStart) { return; }
             if (Input.GetKeyDown(KeyCode.P)) { Time.timeScale = Time.timeScale == 0 ? 1 : 0; }//need better pause
-            if(currentWave >= listOfWaves.Length) { winLoseUI.SetActive(true); Time.timeScale = 0; }//different end
+            if(currentWave >= listOfWaves.Length) { EndGame(); }
             if(enemies.Count <= 0 && listOfWaves.Length > currentWave && isWaveSpawned)
             {
                 NextWave();
@@ -87,6 +87,12 @@ namespace IndieWizards.GameManagement
         public void RemoveEnemy(GameObject enemy)
         {
             enemies.Remove(enemy);
+        }
+
+        public void EndGame()
+        {
+            winLoseUI.SetActive(true); 
+            Time.timeScale = 0;
         }
     }
 }

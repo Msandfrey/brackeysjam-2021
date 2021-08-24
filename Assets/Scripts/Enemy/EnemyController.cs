@@ -16,16 +16,24 @@ namespace IndieWizards.Enemy
         [SerializeField]
         private float speed = 5;
         [SerializeField]
+        private int bulletDamage = 1;
+        [SerializeField]
+        [Tooltip("Higher number is slower rate.")]
+        private float fireRate = .5f;
         private bool isDead = false;
         private GameManager gameManager;
+        [SerializeField]
+        private Fire1 fireStraight;
         private Health health;
         // Start is called before the first frame update
         void Start()
         {
             gameManager = FindObjectOfType<GameManager>();
-
             health = GetComponent<Health>();
             health.onDeath += HandleDeath;
+
+            //continually fire
+            StartCoroutine(FireWeaponStraight());
 
         }
 
@@ -46,6 +54,13 @@ namespace IndieWizards.Enemy
             //animation for change
             //change the way it fires
             //set cooldown for change
+        }
+
+        IEnumerator FireWeaponStraight()
+        {
+            yield return new WaitForSeconds(fireRate);
+            fireStraight.FireBulletStraight(bulletDamage);
+            StartCoroutine(FireWeaponStraight());
         }
 
         public void RemoveFromGame()//handles death on moving off screen
