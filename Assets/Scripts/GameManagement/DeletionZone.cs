@@ -10,10 +10,12 @@ namespace IndieWizards.GameManagement
         private void OnTriggerEnter(Collider other)
         {
             //delete enemy so wave can end
-            if (other.tag.Equals("Enemy") || other.tag.Equals("Bullet"))
+            if (other.tag.Equals("Bullet"))
             {
                 Destroy(other.gameObject);
             }
+            if (other.tag.Equals("Enemy")) { other.GetComponent<EnemyController>().RemoveFromGame(); }
+            
         }
     }
 }

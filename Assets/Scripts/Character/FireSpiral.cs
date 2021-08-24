@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace IndieWizards.Character
 {
-    public class Fire2 : Fire
+    public class FireSpiral : Fire
     {
         [SerializeField]
         private GameObject projectile;
