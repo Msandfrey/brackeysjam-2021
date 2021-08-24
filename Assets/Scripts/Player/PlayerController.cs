@@ -28,7 +28,7 @@ namespace IndieWizards.Player
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                fireStraight.FireBulletStraight(damage);
+                fireStraight.Shoot(damage);
             }
         }
 
