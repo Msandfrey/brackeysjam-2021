@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Fire1 : MonoBehaviour
 {
-    public GameObject projectile;
-    public Transform spawnPoint;
-    public float LaunchForce = 1000;
-    public float ForceMultiplier = 1;
+    [SerializeField]
+    private GameObject projectile;
+    [SerializeField]
+    private Transform spawnPoint;
+    [SerializeField]
+    private float LaunchForce = 1000;
+    [SerializeField]
+    private float ForceMultiplier = 1;
+    [SerializeField]
     Rigidbody m_Rigidbody;
     // Start is called before the first frame update
     void Start()

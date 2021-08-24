@@ -4,16 +4,24 @@ using UnityEngine;
 
 public class Fire2 : MonoBehaviour
 {
-    public GameObject projectile;
-    public Transform spawnPoint;
-    public float LaunchForce = 1000;
-    public float ForceMultiplier = 1;
+    [SerializeField]
+    private GameObject projectile;
+    [SerializeField]
+    private Transform spawnPoint;
+    [SerializeField]
+    private float LaunchForce = 1000;
+    [SerializeField]
+    private float ForceMultiplier = 1;
+    [SerializeField]
     Rigidbody m_Rigidbody;
-    public float fireRate = 0.1f;
-    public float lastTime = 0f;
-    public bool shotToTheLeft = false; 
-    public float sineValue;
-    public float shootingDuration = 0f;
+    [SerializeField]
+    private float fireRate = 0.1f;
+    [SerializeField]
+    private float lastTime = 0f;
+    [SerializeField]
+    private float sineValue;
+    [SerializeField]
+    private float shootingDuration = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +37,7 @@ public class Fire2 : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             shootingDuration += Time.deltaTime;
-            transform.Rotate(new Vector3(0, 0, .25f * Mathf.Cos(shootingDuration)));
+            transform.Rotate(new Vector3(0, 0, .085f * Mathf.Cos(shootingDuration)));
             sineValue = Mathf.Sin(shootingDuration);
 
             if(waitTime > fireRate)
@@ -44,7 +52,7 @@ public class Fire2 : MonoBehaviour
         
         
         
-        if(waitTime > 2f)
+        if(waitTime > 1.5f)
         {
             transform.rotation = Quaternion.identity;
             shootingDuration = 0;
