@@ -289,6 +289,17 @@ Transform:
   m_Father: {fileID: 730089129}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &285809658 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7135969229376923816, guid: ed42a88299fbb4c458e934731a47e7ba, type: 3}
+  m_PrefabInstance: {fileID: 269886873925541065}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c5946c7739119d49af01e4ff94c9918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &336115545
 GameObject:
   m_ObjectHideFlags: 0
@@ -1644,9 +1655,17 @@ PrefabInstance:
       propertyPath: speed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 269886874176662807, guid: ed42a88299fbb4c458e934731a47e7ba, type: 3}
+      propertyPath: maxHitPoints
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 269886874176662814, guid: ed42a88299fbb4c458e934731a47e7ba, type: 3}
       propertyPath: m_Name
       value: EnemyTestSphere (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135969229376923816, guid: ed42a88299fbb4c458e934731a47e7ba, type: 3}
+      propertyPath: LaunchForce
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed42a88299fbb4c458e934731a47e7ba, type: 3}
@@ -1706,9 +1725,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 269886874176662805, guid: ed42a88299fbb4c458e934731a47e7ba, type: 3}
+      propertyPath: gunList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 269886874176662805, guid: ed42a88299fbb4c458e934731a47e7ba, type: 3}
+      propertyPath: gunList.Array.data[0]
+      value: 
+      objectReference: {fileID: 285809658}
+    - target: {fileID: 269886874176662807, guid: ed42a88299fbb4c458e934731a47e7ba, type: 3}
+      propertyPath: maxHitPoints
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 269886874176662814, guid: ed42a88299fbb4c458e934731a47e7ba, type: 3}
       propertyPath: m_Name
       value: EnemyTestSphere
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135969229376923816, guid: ed42a88299fbb4c458e934731a47e7ba, type: 3}
+      propertyPath: LaunchForce
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed42a88299fbb4c458e934731a47e7ba, type: 3}

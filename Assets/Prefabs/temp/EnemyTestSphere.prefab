@@ -116,7 +116,8 @@ MonoBehaviour:
   speed: 1
   bulletDamage: 1
   fireRate: 0.5
-  fireStraight: {fileID: 7135969229376923816}
+  gunList:
+  - {fileID: 7135969229376923816}
 --- !u!54 &269886874176662804
 Rigidbody:
   m_ObjectHideFlags: 0

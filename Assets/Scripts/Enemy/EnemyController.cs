@@ -8,7 +8,7 @@ namespace IndieWizards.Enemy
 {
     public class EnemyController : MonoBehaviour
     {
-        public enum EnemyType { One, Two, Three };
+        public enum EnemyType { One, Two, Three, Four };
         public EnemyType currentEnemyType;
 
         [SerializeField]
@@ -20,10 +20,13 @@ namespace IndieWizards.Enemy
         [SerializeField]
         [Tooltip("Higher number is slower rate.")]
         private float fireRate = .5f;
-        private bool isDead = false;
+        private float lastTimeChanged;
+        [SerializeField]
+        private float cooldownOnChange = 1f;
         private GameManager gameManager;
         [SerializeField]
-        private Fire1 fireStraight;
+        private Fire[] gunList;
+        private Fire currentGun;
         private Health health;
         // Start is called before the first frame update
         void Start()
@@ -31,9 +34,12 @@ namespace IndieWizards.Enemy
             gameManager = FindObjectOfType<GameManager>();
             health = GetComponent<Health>();
             health.onDeath += HandleDeath;
+            health.onDamage += HandleDamage;
+
+            HandleChange((int)currentEnemyType);
 
             //continually fire
-            StartCoroutine(FireWeaponStraight());
+            StartCoroutine(FireWeapon());
 
         }
 
@@ -41,26 +47,46 @@ namespace IndieWizards.Enemy
         void Update()
         {
             GetComponent<Rigidbody>().velocity = transform.right * -speed;
-            //for testing
-            if (isDead)
-            {
-                HandleDeath();
-            }
         }
 
-        public void ChangeType()
+        void HandleDamage()
         {
-            currentEnemyType = (EnemyType)Random.Range(0, 2);
-            //animation for change
-            //change the way it fires
-            //set cooldown for change
+            if(Time.time - lastTimeChanged <= cooldownOnChange) { HandleChange(); }
         }
 
-        IEnumerator FireWeaponStraight()
+        public void HandleChange(int type = -1)
+        {
+            ChangeType(type);
+            ChangeGun();
+            //ChangeMovement();
+            //set cooldown for change
+            lastTimeChanged = Time.time;
+        }
+
+        void ChangeType(int type)
+        {
+            if(type == -1)
+            {
+                currentEnemyType = EnemyType.One;//(EnemyType)Random.Range(0, 3);TODO
+            }
+            else
+            {
+                currentEnemyType = (EnemyType)type;
+            }
+            //animation for change
+        }
+
+        void ChangeGun()
+        {
+            currentGun = gunList[(int)currentEnemyType];
+
+        }
+
+        IEnumerator FireWeapon()
         {
             yield return new WaitForSeconds(fireRate);
-            fireStraight.FireBulletStraight(bulletDamage);
-            StartCoroutine(FireWeaponStraight());
+            currentGun.Shoot(bulletDamage);
+            StartCoroutine(FireWeapon());
         }
 
         public void RemoveFromGame()//handles death on moving off screen
