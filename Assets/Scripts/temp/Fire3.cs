@@ -24,8 +24,9 @@ namespace IndieWizards.Character
 
         public override void Shoot(int damage)
         {
-            spawnPoint2.Rotate(0, 0, 15f);
-            spawnPoint3.Rotate(0, 0, -15f);
+            spawnPoint2.Rotate(0, -15f, 0);
+            spawnPoint3.Rotate(0, 15f, 0);
+            
             GameObject projectileInstance1 = Instantiate(projectile, spawnPoint1.position, spawnPoint1.localRotation);
             projectileInstance1.GetComponent<DamageBullets>().SetDamage(damage);
             projectileInstance1.GetComponent<DamageBullets>().SetOwner(transform.parent.gameObject);
@@ -39,13 +40,14 @@ namespace IndieWizards.Character
             m_Rigidbody.AddForce(spawnPoint2.right * LaunchForce * ForceMultiplier);
 
             GameObject projectileInstance3 = Instantiate(projectile, spawnPoint3.position, spawnPoint3.localRotation);
-            projectileInstance2.GetComponent<DamageBullets>().SetDamage(damage);
-            projectileInstance2.GetComponent<DamageBullets>().SetOwner(transform.parent.gameObject);
-            m_Rigidbody = projectileInstance2.GetComponent<Rigidbody>();
+            projectileInstance3.GetComponent<DamageBullets>().SetDamage(damage);
+            projectileInstance3.GetComponent<DamageBullets>().SetOwner(transform.parent.gameObject);
+            m_Rigidbody = projectileInstance3.GetComponent<Rigidbody>();
             m_Rigidbody.AddForce(spawnPoint3.right * LaunchForce * ForceMultiplier);
 
-            spawnPoint2.rotation = Quaternion.identity;
-            spawnPoint3.rotation = Quaternion.identity;
+            spawnPoint2.Rotate(0, 15f, 0);
+            spawnPoint3.Rotate(0, -15f, 0);
+            
         }
 
     }
