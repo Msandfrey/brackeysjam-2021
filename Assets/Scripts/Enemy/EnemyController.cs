@@ -39,9 +39,6 @@ namespace IndieWizards.Enemy
         private GameManager gameManager;
         [SerializeField]
         private Fire[] gunList;
-        [SerializeField]
-        private Bullets[] bulletList;
-        private Bullets currentBullet;
         private Fire currentGun;
         private EnemyAnimationController enemyAnimationController;
         private Health health;
@@ -75,7 +72,6 @@ namespace IndieWizards.Enemy
         {
             ChangeType(type);
             ChangeGun();
-            ChangeBullets();
             ChangeColor();
             //ChangeMovement();
             //set cooldown for change
@@ -99,11 +95,6 @@ namespace IndieWizards.Enemy
         void ChangeGun()
         {
             currentGun = gunList[(int)currentEnemyType];
-        }
-
-        void ChangeBullets()
-        {
-            currentBullet = bulletList[((int)currentEnemyType)/2];//theres only 2 bullets for now
         }
 
         void ChangeColor()

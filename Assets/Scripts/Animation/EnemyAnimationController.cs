@@ -11,6 +11,7 @@ namespace IndieWizards.Animation
 
         public void SetForm(int form)
         {
+            Debug.Log(form);
             animator.SetInteger("Form", form);
         }
     }
