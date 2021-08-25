@@ -23,16 +23,19 @@ namespace IndieWizards.Player
         [SerializeField]
         private int damage = 1;
         [SerializeField]
-        private Fire1 fireStraight1_1;
+        private Fire1 fireStraight1;
 
         //Jimmy Variables
         [SerializeField]
-        private Fire2_2 fireStraight2_4;
-        [SerializeField]
-        private Fire2_2 fireStraight2_5;
+        private Fire2_2 fireStraight2; //It's fire2, just didn't want to change other script yet
 
         [SerializeField]
-        private Fire3 fireStraight1_3;
+        private Fire3 fireStraight3;
+
+        [SerializeField]
+        private Fire4 fireStraight4;
+        [SerializeField]
+        private Fire5 fireStraight5;
         //
 
         
@@ -51,16 +54,11 @@ namespace IndieWizards.Player
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if(_fireMode == fireMode.One) fireStraight1_1.Shoot(damage);
-                if (_fireMode == fireMode.Two) 
-                {
-                    fireStraight2_4.Shoot(damage);
-                    fireStraight2_5.Shoot(damage);
-                }
-                if (_fireMode == fireMode.Three)
-                {
-                    fireStraight1_3.Shoot(damage);
-                }
+                if(_fireMode == fireMode.One) fireStraight1.Shoot(damage);
+                if (_fireMode == fireMode.Two)  fireStraight2.Shoot(damage);
+                if (_fireMode == fireMode.Three) fireStraight3.Shoot(damage);
+                if (_fireMode == fireMode.Four) fireStraight4.Shoot(damage);
+                if (_fireMode == fireMode.Five) fireStraight5.Shoot(damage);
             }
         }
 
