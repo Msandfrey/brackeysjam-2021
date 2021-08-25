@@ -19,15 +19,15 @@ namespace IndieWizards.Character
         Rigidbody m_Rigidbody;
         [SerializeField]
         private GameObject Player;
-        public override void Shoot(int damage)
+        public override void Shoot(int damage, GameObject bulletToShoot)
         {
-            GameObject projectileInstance1 = Instantiate(projectile, spawnPointTop.position, spawnPointTop.localRotation);
+            GameObject projectileInstance1 = Instantiate(bulletToShoot, spawnPointTop.position, spawnPointTop.localRotation);
             projectileInstance1.GetComponent<DamageBullets>().SetDamage(damage);
             projectileInstance1.GetComponent<DamageBullets>().SetOwner(Player);
             m_Rigidbody = projectileInstance1.GetComponent<Rigidbody>();
             m_Rigidbody.AddForce(spawnPointTop.right * LaunchForce * ForceMultiplier);
 
-            GameObject projectileInstance2 = Instantiate(projectile, spawnPointBot.position, spawnPointBot.localRotation);
+            GameObject projectileInstance2 = Instantiate(bulletToShoot, spawnPointBot.position, spawnPointBot.localRotation);
             projectileInstance2.GetComponent<DamageBullets>().SetDamage(damage);
             projectileInstance2.GetComponent<DamageBullets>().SetOwner(Player);
             m_Rigidbody = projectileInstance2.GetComponent<Rigidbody>();

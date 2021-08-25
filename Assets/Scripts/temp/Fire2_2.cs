@@ -18,7 +18,7 @@ namespace IndieWizards.Character
         private float ForceMultiplier = 1;
         Rigidbody m_Rigidbody;
 
-        public override void Shoot(int damage)
+        public override void Shoot(int damage, int healing, GameObject bulletToShoot)
         {
             GameObject projectileInstance4 = Instantiate(projectile, spawnPoint4.position, spawnPoint4.localRotation);
             projectileInstance4.GetComponent<DamageBullets>().SetDamage(damage);

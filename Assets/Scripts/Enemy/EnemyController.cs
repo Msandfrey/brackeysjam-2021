@@ -39,6 +39,9 @@ namespace IndieWizards.Enemy
         private GameManager gameManager;
         [SerializeField]
         private Fire[] gunList;
+        [SerializeField]
+        private GameObject[] bulletList;
+        private GameObject currentBullet;
         private Fire currentGun;
         private EnemyAnimationController enemyAnimationController;
         private Health health;
@@ -123,7 +126,7 @@ namespace IndieWizards.Enemy
         IEnumerator FireWeapon()
         {
             yield return new WaitForSeconds(fireRate);
-            currentGun.Shoot(bulletDamage);
+            currentGun.Shoot(bulletDamage, currentBullet);
             StartCoroutine(FireWeapon());
         }
 

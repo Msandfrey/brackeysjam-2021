@@ -7,8 +7,6 @@ namespace IndieWizards.Character
     public class Fire1 : Fire
     {
         [SerializeField]
-        private GameObject projectile;
-        [SerializeField]
         private Transform spawnPoint;
         [SerializeField]
         private float LaunchForce = 1000;
@@ -18,9 +16,9 @@ namespace IndieWizards.Character
         [SerializeField]
         private GameObject Player;
 
-        public override void Shoot(int damage)
+        public override void Shoot(int damage, GameObject bulletToShoot)
         {
-            GameObject projectileInstance = Instantiate(projectile, spawnPoint.position, spawnPoint.localRotation);
+            GameObject projectileInstance = Instantiate(bulletToShoot, spawnPoint.position, spawnPoint.localRotation);
             projectileInstance.GetComponent<DamageBullets>().SetDamage(damage);
             projectileInstance.GetComponent<DamageBullets>().SetOwner(Player);
             m_Rigidbody = projectileInstance.GetComponent<Rigidbody>();

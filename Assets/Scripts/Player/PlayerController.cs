@@ -11,13 +11,15 @@ namespace IndieWizards.Player
         private enum FireMode {One,Two,Three,Four,Five};
         [SerializeField]
         private FireMode fireMode = FireMode.One;
-        
+
         [SerializeField]
         private int damage = 1;
         [SerializeField]
         private Fire[] fireModes;
         private Fire currentFireMode;
 
+        [SerializeField]
+        private GameObject bullet;
         private Health health;
         private GameManager gameManager;
         [SerializeField]
@@ -35,8 +37,8 @@ namespace IndieWizards.Player
         // Update is called once per frame
         void Update()
         {
-            if(currentFireMode != fireModes[(int)fireMode]) ChangeFireMode(); //should be in trigger when implemented
-            if (Input.GetKeyDown(KeyCode.Space)) currentFireMode.Shoot(damage);
+            //if(currentFireMode != fireModes[(int)fireMode]) ChangeFireMode(); //should be in trigger when implemented
+            if (Input.GetKeyDown(KeyCode.Space)) currentFireMode.Shoot(damage, bullet);
         }
 
         void HandleDeath()
