@@ -6,16 +6,13 @@ namespace IndieWizards.Animation
 {
     public class EnemyAnimationController : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+        [SerializeField]
+        Animator animator;
 
-        // Update is called once per frame
-        void Update()
+        public void SetForm(int form)
         {
-        
+            Debug.Log(form);
+            animator.SetInteger("Form", form);
         }
     }
 }

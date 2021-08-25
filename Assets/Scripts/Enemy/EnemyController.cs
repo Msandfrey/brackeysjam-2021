@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using IndieWizards.GameManagement;
 using IndieWizards.Character;
+using IndieWizards.Animation;
 
 namespace IndieWizards.Enemy
 {
     public class EnemyController : MonoBehaviour
     {
-        public enum EnemyType { One, Two, Three, Four };
+        public enum EnemyType { Zero, One, Two, Three };
         public EnemyType currentEnemyType;
-
+        [Header("Stats")]
         [SerializeField]
         private int scoreValue = 10;
         [SerializeField]
-        private float speed = 5;
+        private float moveSpeed = 5;
         [SerializeField]
         private int bulletDamage = 1;
         [SerializeField]
@@ -23,20 +24,33 @@ namespace IndieWizards.Enemy
         private float lastTimeChanged;
         [SerializeField]
         private float cooldownOnChange = 1f;
+
+        [Header("ShipColors")]
+        [SerializeField]
+        private Color form0Color;
+        [SerializeField]
+        private Color form1Color;
+        [SerializeField]
+        private Color form2Color;
+        [SerializeField]
+        private Color form3Color;
+
+        [Header("Components")]
         private GameManager gameManager;
         [SerializeField]
         private Fire[] gunList;
         private Fire currentGun;
+        private EnemyAnimationController enemyAnimationController;
         private Health health;
         // Start is called before the first frame update
         void Start()
         {
             gameManager = FindObjectOfType<GameManager>();
+            enemyAnimationController = GetComponent<EnemyAnimationController>();
             health = GetComponent<Health>();
             health.onDeath += HandleDeath;
             health.onDamage += HandleDamage;
 
-            Debug.Log((int)currentEnemyType);
             HandleChange((int)currentEnemyType);
             //continually fire
             StartCoroutine(FireWeapon());
@@ -46,18 +60,19 @@ namespace IndieWizards.Enemy
         // Update is called once per frame
         void Update()
         {
-            GetComponent<Rigidbody>().velocity = transform.right * -speed;
+            GetComponent<Rigidbody>().velocity = transform.forward * moveSpeed;
         }
 
         void HandleDamage()
         {
-            if(Time.time - lastTimeChanged <= cooldownOnChange) { HandleChange(); }
+            if(lastTimeChanged - Time.time <= cooldownOnChange) { HandleChange(); }
         }
 
         public void HandleChange(int type = -1)
         {
             ChangeType(type);
             ChangeGun();
+            ChangeColor();
             //ChangeMovement();
             //set cooldown for change
             lastTimeChanged = Time.time;
@@ -67,18 +82,42 @@ namespace IndieWizards.Enemy
         {
             if(type == -1)
             {
-                currentEnemyType = EnemyType.One;//(EnemyType)Random.Range(0, 3);TODO
+                currentEnemyType = (EnemyType)Random.Range(0, 3);
             }
             else
             {
                 currentEnemyType = (EnemyType)type;
             }
             //animation for change
+            enemyAnimationController.SetForm((int)currentEnemyType);
         }
 
         void ChangeGun()
         {
             currentGun = gunList[(int)currentEnemyType];
+        }
+
+        void ChangeColor()
+        {
+            Material mat = GetComponent<SkinnedMeshRenderer>().material;
+            switch (currentEnemyType)
+            {
+                case EnemyType.Zero:
+                    mat.color = form0Color;
+                    break;
+                case EnemyType.One:
+                    mat.color = form1Color;
+                    break;
+                case EnemyType.Two:
+                    mat.color = form2Color;
+                    break;
+                case EnemyType.Three:
+                    mat.color = form3Color;
+                    break;
+                default:
+                    mat.color = form0Color;
+                    break;
+            }
         }
 
         IEnumerator FireWeapon()
