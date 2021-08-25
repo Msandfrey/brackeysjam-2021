@@ -36,8 +36,8 @@ namespace IndieWizards.Enemy
             health.onDeath += HandleDeath;
             health.onDamage += HandleDamage;
 
+            Debug.Log((int)currentEnemyType);
             HandleChange((int)currentEnemyType);
-
             //continually fire
             StartCoroutine(FireWeapon());
 
@@ -79,7 +79,6 @@ namespace IndieWizards.Enemy
         void ChangeGun()
         {
             currentGun = gunList[(int)currentEnemyType];
-
         }
 
         IEnumerator FireWeapon()
