@@ -15,21 +15,14 @@ namespace IndieWizards.Character
         [SerializeField]
         private float ForceMultiplier = 1;
         Rigidbody m_Rigidbody;
+        [SerializeField]
+        private GameObject Player;
 
         public override void Shoot(int damage)
         {
             GameObject projectileInstance = Instantiate(projectile, spawnPoint.position, spawnPoint.localRotation);
             projectileInstance.GetComponent<DamageBullets>().SetDamage(damage);
-            projectileInstance.GetComponent<DamageBullets>().SetOwner(transform.parent.gameObject);
-            m_Rigidbody = projectileInstance.GetComponent<Rigidbody>();
-            m_Rigidbody.AddForce(spawnPoint.right * LaunchForce * ForceMultiplier);
-        }
-
-        public void FireBulletStraight(int damage)
-        {
-            GameObject projectileInstance = Instantiate(projectile, spawnPoint.position, spawnPoint.localRotation);
-            projectileInstance.GetComponent<DamageBullets>().SetDamage(damage);
-            projectileInstance.GetComponent<DamageBullets>().SetOwner(transform.parent.gameObject);
+            projectileInstance.GetComponent<DamageBullets>().SetOwner(Player);
             m_Rigidbody = projectileInstance.GetComponent<Rigidbody>();
             m_Rigidbody.AddForce(spawnPoint.right * LaunchForce * ForceMultiplier);
         }

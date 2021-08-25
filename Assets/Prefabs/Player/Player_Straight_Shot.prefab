@@ -69,9 +69,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2436614762402738709}
-  - component: {fileID: 9109393812360954011}
-  - component: {fileID: 3151134750157694456}
-  - component: {fileID: 347195890740679053}
   m_Layer: 0
   m_Name: FiringPoint1
   m_TagString: Untagged
@@ -93,60 +90,6 @@ Transform:
   m_Father: {fileID: 4692599158852023260}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &9109393812360954011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2436614762402738708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c5946c7739119d49af01e4ff94c9918, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 7209064194344666876, guid: 0ba501369cc695040a646d26ccc2caf9, type: 3}
-  spawnPoint: {fileID: 2436614762402738709}
-  LaunchForce: 1000
-  ForceMultiplier: 1
---- !u!114 &3151134750157694456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2436614762402738708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d065b5baadd0ecf448279814a8a3959f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 7209064194344666876, guid: 0ba501369cc695040a646d26ccc2caf9, type: 3}
-  spawnPoint1: {fileID: 2436614762402738709}
-  spawnPoint2: {fileID: 6391303626346958322}
-  spawnPoint3: {fileID: 1069450906107163129}
-  LaunchForce: 1000
-  ForceMultiplier: 1
---- !u!114 &347195890740679053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2436614762402738708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c30c986b4eb5b74083d518fd9031734, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 7209064194344666876, guid: 0ba501369cc695040a646d26ccc2caf9, type: 3}
-  spawnPoint1: {fileID: 2436614762402738709}
-  spawnPoint2: {fileID: 6391303626346958322}
-  spawnPoint3: {fileID: 1069450906107163129}
-  spawnPoint4: {fileID: 3588060594069588123}
-  spawnPoint5: {fileID: 4166019599242492868}
-  LaunchForce: 1000
-  ForceMultiplier: 1
 --- !u!1 &3911803909406285981
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,7 +99,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3588060594069588123}
-  - component: {fileID: 1923106140062217373}
   m_Layer: 0
   m_Name: FiringPoint4
   m_TagString: Untagged
@@ -178,23 +120,6 @@ Transform:
   m_Father: {fileID: 4692599158852023260}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &1923106140062217373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3911803909406285981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67d719a9752b35429973fa60746adf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 7209064194344666876, guid: 0ba501369cc695040a646d26ccc2caf9, type: 3}
-  spawnPoint4: {fileID: 3588060594069588123}
-  spawnPoint5: {fileID: 4166019599242492868}
-  LaunchForce: 1000
-  ForceMultiplier: 1
 --- !u!1 &4054400862585441894
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,8 +135,13 @@ GameObject:
   - component: {fileID: 8593577326933439493}
   - component: {fileID: 2436614760658994991}
   - component: {fileID: 4054400862585441892}
+  - component: {fileID: 476630213}
+  - component: {fileID: 476630214}
+  - component: {fileID: 476630215}
+  - component: {fileID: 476630216}
+  - component: {fileID: 476630217}
   m_Layer: 0
-  m_Name: Player_Straight_Shot 1
+  m_Name: Player_Straight_Shot
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -323,13 +253,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18b61747d3d12fe4297b0b07ee5d06af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fireMode: 3
+  fireMode: 4
   damage: 1
-  fireStraight1: {fileID: 9109393812360954011}
-  fireStraight2: {fileID: 1923106140062217373}
-  fireStraight3: {fileID: 3151134750157694456}
-  fireStraight4: {fileID: 347195891317571638}
-  fireStraight5: {fileID: 347195890740679053}
+  fireStraight1: {fileID: 476630213}
+  fireStraight2: {fileID: 476630214}
+  fireStraight3: {fileID: 476630215}
+  fireStraight4: {fileID: 476630216}
+  fireStraight5: {fileID: 476630217}
 --- !u!114 &4054400862585441892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,6 +273,101 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHitPoints: 4
+--- !u!114 &476630213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4054400862585441894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c5946c7739119d49af01e4ff94c9918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 7209064194344666876, guid: 0ba501369cc695040a646d26ccc2caf9, type: 3}
+  spawnPoint: {fileID: 2436614762402738709}
+  LaunchForce: 1000
+  ForceMultiplier: 1
+  Player: {fileID: 4054400862585441894}
+--- !u!114 &476630214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4054400862585441894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bebdabace2be52b4580caddb319140b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 7209064194344666876, guid: 0ba501369cc695040a646d26ccc2caf9, type: 3}
+  spawnPointTop: {fileID: 3588060594069588123}
+  spawnPointBot: {fileID: 4166019599242492868}
+  LaunchForce: 1000
+  ForceMultiplier: 1
+  Player: {fileID: 4054400862585441894}
+--- !u!114 &476630215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4054400862585441894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d065b5baadd0ecf448279814a8a3959f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 7209064194344666876, guid: 0ba501369cc695040a646d26ccc2caf9, type: 3}
+  spawnPoint1: {fileID: 2436614762402738709}
+  spawnPoint2: {fileID: 6391303626346958322}
+  spawnPoint3: {fileID: 1069450906107163129}
+  LaunchForce: 1000
+  ForceMultiplier: 1
+  Player: {fileID: 4054400862585441894}
+--- !u!114 &476630216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4054400862585441894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5a5a890ee0a85540a3a4221fef477db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 7209064194344666876, guid: 0ba501369cc695040a646d26ccc2caf9, type: 3}
+  spawnPoint1: {fileID: 6391303626346958322}
+  spawnPoint2: {fileID: 1069450906107163129}
+  spawnPoint3: {fileID: 3588060594069588123}
+  spawnPoint4: {fileID: 4166019599242492868}
+  LaunchForce: 1000
+  ForceMultiplier: 1
+  Player: {fileID: 4054400862585441894}
+--- !u!114 &476630217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4054400862585441894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c30c986b4eb5b74083d518fd9031734, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 7209064194344666876, guid: 0ba501369cc695040a646d26ccc2caf9, type: 3}
+  spawnPoint1: {fileID: 2436614762402738709}
+  spawnPoint2: {fileID: 6391303626346958322}
+  spawnPoint3: {fileID: 1069450906107163129}
+  spawnPoint4: {fileID: 3588060594069588123}
+  spawnPoint5: {fileID: 4166019599242492868}
+  LaunchForce: 1000
+  ForceMultiplier: 1
+  Player: {fileID: 4054400862585441894}
 --- !u!1 &9070011587825424788
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,7 +377,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6391303626346958322}
-  - component: {fileID: 347195891317571638}
   m_Layer: 0
   m_Name: FiringPoint2
   m_TagString: Untagged
@@ -374,22 +398,3 @@ Transform:
   m_Father: {fileID: 4692599158852023260}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &347195891317571638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9070011587825424788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5a5a890ee0a85540a3a4221fef477db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 7209064194344666876, guid: 0ba501369cc695040a646d26ccc2caf9, type: 3}
-  spawnPoint1: {fileID: 6391303626346958322}
-  spawnPoint2: {fileID: 1069450906107163129}
-  spawnPoint3: {fileID: 3588060594069588123}
-  spawnPoint4: {fileID: 4166019599242492868}
-  LaunchForce: 1000
-  ForceMultiplier: 1

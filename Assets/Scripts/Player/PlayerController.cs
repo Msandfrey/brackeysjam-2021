@@ -9,15 +9,9 @@ namespace IndieWizards.Player
     public class PlayerController : MonoBehaviour
     {
         // Jimmy Variables
-        private enum fireMode {
-            One,
-            Two,
-            Three,
-            Four,
-            Five
-        };
+        private enum FireMode {One,Two,Three,Four,Five};
         [SerializeField]
-        private fireMode _fireMode = fireMode.One;
+        private FireMode fireMode = FireMode.One;
         //
         
         [SerializeField]
@@ -27,7 +21,7 @@ namespace IndieWizards.Player
 
         //Jimmy Variables
         [SerializeField]
-        private Fire2_2 fireStraight2; //It's fire2, just didn't want to change other script yet
+        private Fire2 fireStraight2; 
 
         [SerializeField]
         private Fire3 fireStraight3;
@@ -36,6 +30,9 @@ namespace IndieWizards.Player
         private Fire4 fireStraight4;
         [SerializeField]
         private Fire5 fireStraight5;
+        [SerializeField]
+        private Fire[] fireModes;
+        private Fire currentFireMode;
         //
 
         
@@ -54,17 +51,26 @@ namespace IndieWizards.Player
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if(_fireMode == fireMode.One) fireStraight1.Shoot(damage);
-                if (_fireMode == fireMode.Two)  fireStraight2.Shoot(damage);
-                if (_fireMode == fireMode.Three) fireStraight3.Shoot(damage);
-                if (_fireMode == fireMode.Four) fireStraight4.Shoot(damage);
-                if (_fireMode == fireMode.Five) fireStraight5.Shoot(damage);
+                if (fireMode == FireMode.One) fireStraight1.Shoot(damage);
+                if (fireMode == FireMode.Two)  fireStraight2.Shoot(damage);
+                if (fireMode == FireMode.Three) fireStraight3.Shoot(damage);
+                if (fireMode == FireMode.Four) fireStraight4.Shoot(damage);
+                if (fireMode == FireMode.Five) fireStraight5.Shoot(damage);
             }
         }
 
         void HandleDeath()
         {
             gameManager.EndGame();
+        }
+
+        public void HandleChange(int type = -1)
+        {
+
+        }
+        void ChangeFireMode()
+        {
+
         }
     }
 }
