@@ -255,11 +255,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireMode: 4
   damage: 1
-  fireStraight1: {fileID: 476630213}
-  fireStraight2: {fileID: 476630214}
-  fireStraight3: {fileID: 476630215}
-  fireStraight4: {fileID: 476630216}
-  fireStraight5: {fileID: 476630217}
+  fireModes:
+  - {fileID: 476630213}
+  - {fileID: 476630214}
+  - {fileID: 476630215}
+  - {fileID: 476630216}
+  - {fileID: 476630217}
+  shipColor: {r: 0.1, g: 0.53, b: 0.71, a: 1}
 --- !u!114 &4054400862585441892
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -136,6 +136,9 @@ MonoBehaviour:
   - {fileID: 3029632961326423002}
   - {fileID: 3613268967283055085}
   - {fileID: 8069760740566770631}
+  bulletList:
+  - {fileID: -1811877096685013150, guid: 0ba501369cc695040a646d26ccc2caf9, type: 3}
+  - {fileID: 1322700052945259739, guid: 95b3a667adb5fad438e94b600b3fc832, type: 3}
 --- !u!54 &269886874176662804
 Rigidbody:
   m_ObjectHideFlags: 0
