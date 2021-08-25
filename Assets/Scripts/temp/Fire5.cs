@@ -29,6 +29,10 @@ namespace IndieWizards.Character
 
         public override void Shoot(int damage)
         {
+
+            spawnPoint2.Rotate(0, -15f, 0);
+            spawnPoint3.Rotate(0, 15f, 0);
+            
             GameObject projectileInstance1 = Instantiate(projectile, spawnPoint1.position, spawnPoint1.localRotation);
             projectileInstance1.GetComponent<DamageBullets>().SetDamage(damage);
             projectileInstance1.GetComponent<DamageBullets>().SetOwner(Player);
