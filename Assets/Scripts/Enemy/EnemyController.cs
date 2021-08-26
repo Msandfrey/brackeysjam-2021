@@ -103,7 +103,7 @@ namespace IndieWizards.Enemy
 
         void ChangeBullets()
         {
-            currentBullet = bulletList[Random.Range(0,1)];
+            currentBullet = bulletList[Random.Range(0,bulletList.Length-1 )];
         }
 
         void ChangeColor()

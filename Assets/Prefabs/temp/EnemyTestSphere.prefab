@@ -119,8 +119,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce80791810d24474ca603967fa780a4d, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   currentEnemyType: 0
   scoreValue: 10
   moveSpeed: 5
@@ -139,6 +139,7 @@ MonoBehaviour:
   bulletList:
   - {fileID: 7209064194344666876, guid: 0ba501369cc695040a646d26ccc2caf9, type: 3}
   - {fileID: 7209064194344666876, guid: 95b3a667adb5fad438e94b600b3fc832, type: 3}
+  - {fileID: 7209064194344666876, guid: c3e14ae517b0c5e43acb3fd27cd4728e, type: 3}
 --- !u!54 &269886874176662804
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -165,8 +166,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fda4799d7ce56848a3298ac9b8084d9, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   maxHitPoints: 1
 --- !u!95 &2432002164438215056
 Animator:
@@ -183,7 +184,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage:
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -197,8 +198,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0011a55a3df796c4a86cc7f9b056bb83, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   animator: {fileID: 2432002164438215056}
 --- !u!1 &1003821933492758889
 GameObject:
@@ -333,8 +334,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bebdabace2be52b4580caddb319140b9, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   projectile: {fileID: 7209064194344666876, guid: 0ba501369cc695040a646d26ccc2caf9, type: 3}
   spawnPointTop: {fileID: 5461860034611110858}
   spawnPointBot: {fileID: 7191593445858135268}
@@ -502,8 +503,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c5946c7739119d49af01e4ff94c9918, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   spawnPoint: {fileID: 8771048712263605749}
   LaunchForce: 1000
   ForceMultiplier: 1
@@ -612,8 +613,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d065b5baadd0ecf448279814a8a3959f, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   projectile: {fileID: 7209064194344666876, guid: 0ba501369cc695040a646d26ccc2caf9, type: 3}
   spawnPoint1: {fileID: 135523967524674805}
   spawnPoint2: {fileID: 8358744181537892928}
@@ -666,8 +667,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5a5a890ee0a85540a3a4221fef477db, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   projectile: {fileID: 7209064194344666876, guid: 0ba501369cc695040a646d26ccc2caf9, type: 3}
   spawnPoint1: {fileID: 7536643861436128979}
   spawnPoint2: {fileID: 3860504857930321256}

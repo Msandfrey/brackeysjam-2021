@@ -58,9 +58,9 @@ namespace IndieWizards.Player
             }
         }
 
-        public void SetDamage(int newDamage)
+        public void SetDamage()
         {
-            damage = newDamage;
+            damage++;
         }
     }
 }
