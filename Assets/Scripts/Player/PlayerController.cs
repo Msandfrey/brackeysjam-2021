@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using IndieWizards.Character;
+using IndieWizards.Animation;
 using IndieWizards.GameManagement;
 
 namespace IndieWizards.Player
@@ -23,11 +24,22 @@ namespace IndieWizards.Player
         private Health health;
         private GameManager gameManager;
         [SerializeField]
-        private Color shipColor;
+        EnemyAnimationController animationController;
+
+        [Header("Ship Colors")]
+        [SerializeField]
+        private Color form0;
+        [SerializeField]
+        private Color form1;
+        [SerializeField]
+        private Color form2;
+        [SerializeField]
+        private Color form3;
         // Start is called before the first frame update
         void Start()
         {
-            GetComponent<MeshRenderer>().material.color = shipColor;
+            animationController = GetComponent<EnemyAnimationController>();
+            GetComponent<SkinnedMeshRenderer>().material.color = form0;
             gameManager = FindObjectOfType<GameManager>();
             health = GetComponent<Health>();
             health.onDeath += HandleDeath;
@@ -55,6 +67,30 @@ namespace IndieWizards.Player
             else
             {
                 currentFireMode = fireModes[mode];
+            }
+        }
+
+        public void ChangeForm()
+        {
+            int newForm = Random.Range(0, 3);
+            animationController.SetForm(newForm);
+            switch (newForm)
+            {
+                case 0:
+                    GetComponent<SkinnedMeshRenderer>().material.color = form0;
+                    break;
+                case 1:
+                    GetComponent<SkinnedMeshRenderer>().material.color = form1;
+                    break;
+                case 2:
+                    GetComponent<SkinnedMeshRenderer>().material.color = form2;
+                    break;
+                case 3:
+                    GetComponent<SkinnedMeshRenderer>().material.color = form3;
+                    break;
+                default:
+                    GetComponent<SkinnedMeshRenderer>().material.color = form0;
+                    break;
             }
         }
 

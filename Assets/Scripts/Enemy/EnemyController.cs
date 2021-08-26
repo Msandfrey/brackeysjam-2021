@@ -103,7 +103,24 @@ namespace IndieWizards.Enemy
 
         void ChangeBullets()
         {
-            currentBullet = bulletList[Random.Range(0,bulletList.Length-1 )];
+            switch (currentEnemyType)
+            {
+                case EnemyType.Zero://friendly heals
+                    currentBullet = bulletList[1];
+                    break;
+                case EnemyType.One://enemy damages
+                    currentBullet = bulletList[0];
+                    break;
+                case EnemyType.Two://weird spins
+                    currentBullet = bulletList[2];
+                    break;
+                case EnemyType.Three://weird spins
+                    currentBullet = bulletList[2];
+                    break;
+                default://default damages
+                    currentBullet = bulletList[0];
+                    break;
+            }
         }
 
         void ChangeColor()
@@ -148,6 +165,15 @@ namespace IndieWizards.Enemy
             gameManager.AddToScore(scoreValue);
             gameManager.RemoveEnemy(this.gameObject);
             Destroy(this.gameObject);
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.tag.Equals("Player"))
+            {
+                other.GetComponent<Health>().TakeDamage(bulletDamage);
+                GetComponent<Health>().TakeDamage(1);
+            }
         }
     }
 }

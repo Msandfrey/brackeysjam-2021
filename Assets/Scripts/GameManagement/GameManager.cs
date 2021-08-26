@@ -86,7 +86,6 @@ namespace IndieWizards.GameManagement
                     enemies.Add(child.gameObject);
                 //}
             }
-            Debug.Log(enemies.Count);
             isWaveSpawned = true;
         }
 
