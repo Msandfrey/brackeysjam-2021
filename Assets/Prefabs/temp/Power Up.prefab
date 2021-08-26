@@ -127,3 +127,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   Upgrade: 0
+  _camera: {fileID: 0}

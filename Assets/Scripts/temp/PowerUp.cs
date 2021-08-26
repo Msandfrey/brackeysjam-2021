@@ -12,9 +12,13 @@ namespace IndieWizards.Player
 
         [SerializeField]
         private PowerUpgrade Upgrade;
+
+        [SerializeField]
+        private GameObject _camera; //Unity doesn't like "camera"
+
         void Start()
         {
-            
+            _camera = FindObjectOfType<Camera>().gameObject;
         }
 
         // Update is called once per frame
@@ -30,6 +34,8 @@ namespace IndieWizards.Player
                 PlayerController player = other.gameObject.GetComponent<PlayerController>();
                 player.ChangeFireMode(); //(int)Upgrade need to paste this inside once i can add it in player controller
                 Destroy(this.gameObject, 0.1f);
+
+                _camera.GetComponent<WorldRotationManager>().SmoothRotate();
             }
         }
     }
