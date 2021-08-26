@@ -31,6 +31,9 @@ namespace IndieWizards.Character
         {
             spawnPoint2.Rotate(0, -15f, 0);
             spawnPoint3.Rotate(0, 15f, 0);
+
+            spawnPoint4.Rotate(0, -30f, 0);
+            spawnPoint5.Rotate(0, 30f, 0);
             
             GameObject projectileInstance1 = Instantiate(bulletToShoot, spawnPoint1.position, spawnPoint1.localRotation);
             projectileInstance1.GetComponent<Bullets>().SetDamage(damageHealValue);
@@ -67,6 +70,12 @@ namespace IndieWizards.Character
             m_Rigidbody = projectileInstance5.GetComponent<Rigidbody>();
             m_Rigidbody.AddForce(spawnPoint5.right * LaunchForce * ForceMultiplier);
 
+
+            spawnPoint2.Rotate(0, 15f, 0);
+            spawnPoint3.Rotate(0, -15f, 0);
+
+            spawnPoint4.Rotate(0, 30f, 0);
+            spawnPoint5.Rotate(0, -30f, 0);
         }
 
     }

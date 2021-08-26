@@ -6,6 +6,8 @@ namespace IndieWizards.Character
 {
     public class Fire4 : Fire
     {
+
+        
         [SerializeField]
         private GameObject projectile;
         [SerializeField]
@@ -27,6 +29,11 @@ namespace IndieWizards.Character
 
         public override void Shoot(int damageHealValue, bool isHealing, GameObject bulletToShoot)
         {
+
+            spawnPoint3.Rotate(0, 15f, 0);
+            spawnPoint4.Rotate(0, -15f, 0);
+
+
             GameObject projectileInstance1 = Instantiate(bulletToShoot, spawnPoint1.position, spawnPoint1.localRotation);
             projectileInstance1.GetComponent<Bullets>().SetDamage(damageHealValue);
             projectileInstance1.GetComponent<Bullets>().SetHealAmount(damageHealValue);
@@ -54,6 +61,9 @@ namespace IndieWizards.Character
             projectileInstance4.GetComponent<Bullets>().SetOwner(Player);
             m_Rigidbody = projectileInstance4.GetComponent<Rigidbody>();
             m_Rigidbody.AddForce(spawnPoint4.right * LaunchForce * ForceMultiplier);
+
+            spawnPoint3.Rotate(0, -15f, 0);
+            spawnPoint4.Rotate(0, 15f, 0);
 
         }
 

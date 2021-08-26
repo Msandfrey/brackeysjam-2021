@@ -62,7 +62,7 @@ namespace IndieWizards.Player
         {
             if(mode == -1)
             {
-                currentFireMode = fireModes[Random.Range(0, fireModes.Length - 1)];
+                currentFireMode = fireModes[Random.Range(0, 4)];
             }
             else
             {
