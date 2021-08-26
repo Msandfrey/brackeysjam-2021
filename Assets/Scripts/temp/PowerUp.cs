@@ -11,7 +11,7 @@ namespace IndieWizards.Player
         private enum PowerUpgrade {OneShot,DoubleShot,TripleShot,QuadShot,PentaShot};
 
         [SerializeField]
-        private PowerUpgrade Upgrade = PowerUpgrade.OneShot;
+        private PowerUpgrade Upgrade;
         void Start()
         {
             
