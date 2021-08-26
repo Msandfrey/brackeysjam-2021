@@ -32,7 +32,7 @@ public class WorldRotationManager : MonoBehaviour
             transform.Rotate(new Vector3(0, 0, -eulerAnglesSpeed));
             spinCount++;
         }
-        ChangeCamerSize();
+        
     }
 
 
@@ -48,7 +48,7 @@ public class WorldRotationManager : MonoBehaviour
         {
             spinCount = Random.Range(-90, -14);
         }
-        
+        ChangeCamerSize();
     }
 
     public void ChangeCamerSize()
@@ -58,7 +58,6 @@ public class WorldRotationManager : MonoBehaviour
             if (transform.eulerAngles.z >= 0 && transform.eulerAngles.z < 90)
             {
                 _camera.orthographicSize = 5 + transform.eulerAngles.z / 18;
-                Debug.Log(transform.eulerAngles.z);
             }
             else if (transform.eulerAngles.z >= 90 && transform.eulerAngles.z < 180)
             {
