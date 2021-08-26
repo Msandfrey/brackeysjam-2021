@@ -34,7 +34,7 @@ public class WorldRotationManager : MonoBehaviour
             transform.Rotate(new Vector3(0, 0, -eulerAnglesSpeed));
             spinCount++;
         }
-        ChangeCamerSize();
+        
     }
 
 
@@ -50,29 +50,40 @@ public class WorldRotationManager : MonoBehaviour
         {
             spinCount = Random.Range(-90, -14);
         }
+
+        ChangeCamerSize();
     }
 
     public void ChangeCamerSize()
     {
-        if(transform.eulerAngles.z >= 0)
-        {
-            if (transform.eulerAngles.z >= 0 && transform.eulerAngles.z < 45)
-            {
-                _camera.orthographicSize = 5 + transform.eulerAngles.z / cameraRotationIncrement;
-            }
-            else if (transform.eulerAngles.z >= 135 && transform.eulerAngles.z < 180)
-            {
-                _camera.orthographicSize = 10 - (transform.eulerAngles.z - 90) / cameraRotationIncrement;
-            }
-            else if (transform.eulerAngles.z >= 225 && transform.eulerAngles.z < 270)
-            {
-                _camera.orthographicSize = 5 + (transform.eulerAngles.z - 180) / cameraRotationIncrement;
-            }
-            else if (transform.eulerAngles.z >= 270 && transform.eulerAngles.z < 360)
-            {
-                _camera.orthographicSize = 10 - (transform.eulerAngles.z - 270) / cameraRotationIncrement;
-            }
-        }
         
+        
+        if (transform.eulerAngles.z >= 0 && transform.eulerAngles.z < 45)
+        {
+            _camera.orthographicSize = 5 + transform.eulerAngles.z / cameraRotationIncrement;
+        }
+        else if (transform.eulerAngles.z >= 45 && transform.eulerAngles.z < 135)
+        {
+            _camera.orthographicSize = 10;
+        }
+        else if (transform.eulerAngles.z >= 135 && transform.eulerAngles.z < 180)
+        {
+            _camera.orthographicSize = 10 - (transform.eulerAngles.z - 135) / cameraRotationIncrement;
+        }
+        else if (transform.eulerAngles.z >= 180 && transform.eulerAngles.z < 225)
+        {
+            _camera.orthographicSize = 5 + (transform.eulerAngles.z - 180) / cameraRotationIncrement;
+        }
+        else if (transform.eulerAngles.z >= 225 && transform.eulerAngles.z < 315)
+        {
+            _camera.orthographicSize = 10;
+        }
+        else if (transform.eulerAngles.z >= 315 && transform.eulerAngles.z < 360)
+        {
+            _camera.orthographicSize = 10 - (transform.eulerAngles.z - 315) / cameraRotationIncrement;
+        }
+        Debug.Log(transform.eulerAngles.z);
     }
 }
+
+
