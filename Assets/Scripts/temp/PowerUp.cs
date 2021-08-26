@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using IndieWizards.GameManagement;
 
 namespace IndieWizards.Player
 {
     public class PowerUp : MonoBehaviour
     {
+        
+        GameManager gameManager;
         [SerializeField]
         private float moveSpeed = 5;
         private enum PowerUpgrade {OneShot,DoubleShot,TripleShot,QuadShot,PentaShot};
@@ -18,6 +21,7 @@ namespace IndieWizards.Player
 
         void Start()
         {
+            gameManager = FindObjectOfType<GameManager>();
             _camera = FindObjectOfType<Camera>().gameObject;
         }
 
@@ -34,9 +38,15 @@ namespace IndieWizards.Player
                 PlayerController player = other.gameObject.GetComponent<PlayerController>();
                 player.ChangeFireMode(); //(int)Upgrade need to paste this inside once i can add it in player controller
                 Destroy(this.gameObject, 0.1f);
-
+                RemoveFromGame();
                 _camera.GetComponent<WorldRotationManager>().SmoothRotate();
             }
+        }
+
+        public void RemoveFromGame()
+        {
+            gameManager.RemoveEnemy(this.gameObject);
+            Destroy(this.gameObject);
         }
     }
 }

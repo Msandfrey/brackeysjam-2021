@@ -12,6 +12,8 @@ public class WorldRotationManager : MonoBehaviour
     [SerializeField]
     private Camera _camera; //Unity doesn't like "camera"
     private int spinCount = 0;
+    [SerializeField]
+    private float cameraRotationIncrement = 9;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +34,7 @@ public class WorldRotationManager : MonoBehaviour
             transform.Rotate(new Vector3(0, 0, -eulerAnglesSpeed));
             spinCount++;
         }
-        
+        ChangeCamerSize();
     }
 
 
@@ -48,47 +50,27 @@ public class WorldRotationManager : MonoBehaviour
         {
             spinCount = Random.Range(-90, -14);
         }
-        ChangeCamerSize();
     }
 
     public void ChangeCamerSize()
     {
         if(transform.eulerAngles.z >= 0)
         {
-            if (transform.eulerAngles.z >= 0 && transform.eulerAngles.z < 90)
+            if (transform.eulerAngles.z >= 0 && transform.eulerAngles.z < 45)
             {
-                _camera.orthographicSize = 5 + transform.eulerAngles.z / 18;
+                _camera.orthographicSize = 5 + transform.eulerAngles.z / cameraRotationIncrement;
             }
-            else if (transform.eulerAngles.z >= 90 && transform.eulerAngles.z < 180)
+            else if (transform.eulerAngles.z >= 135 && transform.eulerAngles.z < 180)
             {
-                _camera.orthographicSize = 10 - (transform.eulerAngles.z - 90) / 18;
+                _camera.orthographicSize = 10 - (transform.eulerAngles.z - 90) / cameraRotationIncrement;
             }
-            else if (transform.eulerAngles.z >= 180 && transform.eulerAngles.z < 270)
+            else if (transform.eulerAngles.z >= 225 && transform.eulerAngles.z < 270)
             {
-                _camera.orthographicSize = 5 + (transform.eulerAngles.z - 180) / 18;
+                _camera.orthographicSize = 5 + (transform.eulerAngles.z - 180) / cameraRotationIncrement;
             }
             else if (transform.eulerAngles.z >= 270 && transform.eulerAngles.z < 360)
             {
-                _camera.orthographicSize = 10 - (transform.eulerAngles.z - 270) / 18;
-            }
-        }
-        else
-        {
-            if (transform.eulerAngles.z <= 0 && transform.eulerAngles.z > -90)
-            {
-                _camera.orthographicSize = 5 - transform.eulerAngles.z / 18;
-            }
-            else if (transform.eulerAngles.z <= -90 && transform.eulerAngles.z > -180)
-            {
-                _camera.orthographicSize = 10 + (transform.eulerAngles.z + 90) / 18;
-            }
-            else if (transform.eulerAngles.z <= -180 && transform.eulerAngles.z > -270)
-            {
-                _camera.orthographicSize = 5 - (transform.eulerAngles.z + 180) / 18;
-            }
-            else if (transform.eulerAngles.z <= -270 && transform.eulerAngles.z > -360)
-            {
-                _camera.orthographicSize = 10 + (transform.eulerAngles.z + 270) / 18;
+                _camera.orthographicSize = 10 - (transform.eulerAngles.z - 270) / cameraRotationIncrement;
             }
         }
         
