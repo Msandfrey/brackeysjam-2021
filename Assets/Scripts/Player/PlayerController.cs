@@ -46,7 +46,7 @@ namespace IndieWizards.Player
             gameManager.EndGame();
         }
 
-        void ChangeFireMode()
+        public void ChangeFireMode()
         {
             currentFireMode = fireModes[(int)fireMode];
         }
