@@ -12,7 +12,7 @@ namespace IndieWizards.Player
         void Start()
         {
             //transform.rotation = Quaternion.identity;
-            transform.position = new Vector3(-8.05f,0f,0f);
+            transform.position = new Vector3(-7.5f,0f,0f);
         }
 
         // Update is called once per frame

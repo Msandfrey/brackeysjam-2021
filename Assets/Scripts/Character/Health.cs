@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace IndieWizards.Character
 {
@@ -10,13 +11,17 @@ namespace IndieWizards.Character
         public delegate void DamageCallback();
         public DamageCallback onDamage;
 
+        [SerializeField]
+        private GameObject healthBar;
+
         [Header("Hit point settings")]
         //[SerializeField]
         //private int initialHitPoints = 1;
         [SerializeField]
+        private int currentHitPoints;
+        [SerializeField]
         private int maxHitPoints = 1;
 
-        private int currentHitPoints;
 
         // Used to make sure we only trigger onDeath once
         private bool onDeathCallbackRaised;
@@ -25,6 +30,7 @@ namespace IndieWizards.Character
         {
             currentHitPoints = maxHitPoints;
             onDeathCallbackRaised = false;
+            if (healthBar) { healthBar.GetComponent<Slider>().maxValue = maxHitPoints; healthBar.GetComponent<Slider>().value = maxHitPoints; }
         }
 
         public void TakeDamage(int hitPoints)
@@ -39,11 +45,20 @@ namespace IndieWizards.Character
                 onDeath?.Invoke();
                 onDeathCallbackRaised = true;
             }
+            if (healthBar) { AdjustHealthBar(); }
         }
 
         public void RestoreHealth(int hitPoints)
         {
             currentHitPoints = Mathf.Min(currentHitPoints + hitPoints, maxHitPoints);
+            if (healthBar) { AdjustHealthBar(); }
+        }
+
+        void AdjustHealthBar()
+        {
+            float hpPercentage = currentHitPoints / maxHitPoints;
+            healthBar.GetComponent<Slider>().value = currentHitPoints;
+
         }
     }
 }
