@@ -61,7 +61,7 @@ namespace IndieWizards.Character
             }
         }
 
-        public override void Shoot(int damage, int healing, GameObject bulletToShoot)
+        public override void Shoot(int damageHealValue, bool isHealing, GameObject bulletToShoot)
         {
 
         }

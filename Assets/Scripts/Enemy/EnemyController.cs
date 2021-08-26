@@ -75,6 +75,7 @@ namespace IndieWizards.Enemy
         {
             ChangeType(type);
             ChangeGun();
+            ChangeBullets();
             ChangeColor();
             //ChangeMovement();
             //set cooldown for change
@@ -98,6 +99,11 @@ namespace IndieWizards.Enemy
         void ChangeGun()
         {
             currentGun = gunList[(int)currentEnemyType];
+        }
+
+        void ChangeBullets()
+        {
+            currentBullet = bulletList[Random.Range(0,1)];
         }
 
         void ChangeColor()
@@ -126,7 +132,7 @@ namespace IndieWizards.Enemy
         IEnumerator FireWeapon()
         {
             yield return new WaitForSeconds(fireRate);
-            currentGun.Shoot(bulletDamage, currentBullet);
+            currentGun.Shoot(bulletDamage, false, currentBullet);//second damage needs to be a heal
             StartCoroutine(FireWeapon());
         }
 

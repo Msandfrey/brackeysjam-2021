@@ -13,6 +13,10 @@ namespace IndieWizards.Character
         [SerializeField]
         protected int damage;
 
+        public void SetOwner(GameObject ownerObject)
+        {
+            owner = ownerObject;
+        }
         public void SetDamage(int newDamage)
         {
             damage = newDamage;
@@ -21,11 +25,6 @@ namespace IndieWizards.Character
         public void SetHealAmount(int newHeal)
         {
             amountHealed = newHeal;
-        }
-
-        public void SetOwner(GameObject ownerObject)
-        {
-            owner = ownerObject;
         }
     }
 }

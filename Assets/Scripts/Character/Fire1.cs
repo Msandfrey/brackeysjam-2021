@@ -16,11 +16,12 @@ namespace IndieWizards.Character
         [SerializeField]
         private GameObject Player;
 
-        public override void Shoot(int damage, GameObject bulletToShoot)
+        public override void Shoot(int damageHealValue, bool isHealing, GameObject bulletToShoot)
         {
             GameObject projectileInstance = Instantiate(bulletToShoot, spawnPoint.position, spawnPoint.localRotation);
-            projectileInstance.GetComponent<DamageBullets>().SetDamage(damage);
-            projectileInstance.GetComponent<DamageBullets>().SetOwner(Player);
+            projectileInstance.GetComponent<Bullets>().SetDamage(damageHealValue);
+            projectileInstance.GetComponent<Bullets>().SetHealAmount(damageHealValue);
+            projectileInstance.GetComponent<Bullets>().SetOwner(Player);
             m_Rigidbody = projectileInstance.GetComponent<Rigidbody>();
             m_Rigidbody.AddForce(spawnPoint.right * LaunchForce * ForceMultiplier);
         }

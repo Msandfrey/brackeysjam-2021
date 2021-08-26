@@ -9,8 +9,8 @@ namespace IndieWizards.Player
     public class PlayerController : MonoBehaviour
     {
         private enum FireMode {One,Two,Three,Four,Five};
-        [SerializeField]
-        private FireMode fireMode = FireMode.One;
+        //[SerializeField]
+        //private FireMode fireMode = FireMode.One;
 
         [SerializeField]
         private int damage = 1;
@@ -31,14 +31,14 @@ namespace IndieWizards.Player
             gameManager = FindObjectOfType<GameManager>();
             health = GetComponent<Health>();
             health.onDeath += HandleDeath;
-            ChangeFireMode();
+            ChangeFireMode(0);
         }
 
         // Update is called once per frame
         void Update()
         {
             //if(currentFireMode != fireModes[(int)fireMode]) ChangeFireMode(); //should be in trigger when implemented
-            if (Input.GetKeyDown(KeyCode.Space)) currentFireMode.Shoot(damage, bullet);
+            if (Input.GetKeyDown(KeyCode.Space)) currentFireMode.Shoot(damage, false, bullet);//second damage needs to be heal TODO
         }
 
         void HandleDeath()
@@ -46,9 +46,21 @@ namespace IndieWizards.Player
             gameManager.EndGame();
         }
 
-        void ChangeFireMode()
+        public void ChangeFireMode(int mode = -1)
         {
-            currentFireMode = fireModes[(int)fireMode];
+            if(mode == -1)
+            {
+                currentFireMode = fireModes[Random.Range(0, fireModes.Length - 1)];
+            }
+            else
+            {
+                currentFireMode = fireModes[mode];
+            }
+        }
+
+        public void SetDamage(int newDamage)
+        {
+            damage = newDamage;
         }
     }
 }

@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 8263670167911790724}
   - component: {fileID: 1873540747624825848}
   - component: {fileID: 3452956465846553405}
+  - component: {fileID: -1811877096685013150}
   - component: {fileID: 7497377503723810279}
   - component: {fileID: 2564849053022209180}
-  - component: {fileID: -1811877096685013150}
   m_Layer: 0
-  m_Name: DamageBullets
+  m_Name: DamageBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,6 +84,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-1811877096685013150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7209064194344666876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 389a4d4b6b21ad3489d6c5b87ff5d22f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 0}
+  amountHealed: 0
+  damage: 0
 --- !u!135 &7497377503723810279
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -113,17 +128,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 72
   m_CollisionDetection: 0
---- !u!114 &-1811877096685013150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7209064194344666876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd9e4c856ced14f429c86cfff996363b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  owner: {fileID: 0}
