@@ -81,11 +81,12 @@ namespace IndieWizards.GameManagement
             for (int i = 0; i < listOfWaves[currentWave].transform.childCount; i++)
             {
                 Transform child = listOfWaves[currentWave].transform.GetChild(i);
-                if (child.tag.Equals("Enemy"))
-                {
+                //if (child.tag.Equals("Enemy"))
+                //{
                     enemies.Add(child.gameObject);
-                }
+                //}
             }
+            Debug.Log(enemies.Count);
             isWaveSpawned = true;
         }
 
