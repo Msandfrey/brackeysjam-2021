@@ -39,7 +39,7 @@ namespace IndieWizards.GameManagement
         // Update is called once per frame
         void Update()
         {
-            if (isWaitForStart && Input.GetKeyDown(KeyCode.X)) { isWaitForStart = false; Time.timeScale = 1; startUI.SetActive(false); }
+            if (isWaitForStart && Input.GetKeyDown(KeyCode.X)) { BeginGame(); }
             if (isWaitForStart) { return; }
             if (Input.GetKeyDown(KeyCode.P)) { Time.timeScale = Time.timeScale == 0 ? 1 : 0; }//need better pause
             if(currentWave >= listOfWaves.Length) { EndGame(); }
@@ -49,6 +49,11 @@ namespace IndieWizards.GameManagement
                 isWaveSpawned = false;
                 StartCoroutine(WaveStartDelay());
             }
+        }
+
+        public void BeginGame()
+        {
+            isWaitForStart = false; Time.timeScale = 1; startUI.SetActive(false);
         }
 
         public void AddToScore(int value)
