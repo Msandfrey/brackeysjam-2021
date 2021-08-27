@@ -1590,7 +1590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 269886874176662805, guid: ed42a88299fbb4c458e934731a47e7ba, type: 3}
       propertyPath: currentEnemyType
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 269886874176662807, guid: ed42a88299fbb4c458e934731a47e7ba, type: 3}
       propertyPath: maxHitPoints
@@ -1606,11 +1606,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3029632961326423002, guid: ed42a88299fbb4c458e934731a47e7ba, type: 3}
       propertyPath: LaunchForce
-      value: 500
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 3613268967283055085, guid: ed42a88299fbb4c458e934731a47e7ba, type: 3}
       propertyPath: LaunchForce
-      value: 400
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3613268967283055085, guid: ed42a88299fbb4c458e934731a47e7ba, type: 3}
       propertyPath: spawnPoint2
@@ -1650,7 +1650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7135969229376923816, guid: ed42a88299fbb4c458e934731a47e7ba, type: 3}
       propertyPath: LaunchForce
-      value: 600
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 7191593445858135268, guid: ed42a88299fbb4c458e934731a47e7ba, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1678,7 +1678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8069760740566770631, guid: ed42a88299fbb4c458e934731a47e7ba, type: 3}
       propertyPath: LaunchForce
-      value: 50
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed42a88299fbb4c458e934731a47e7ba, type: 3}
