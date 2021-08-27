@@ -2175,9 +2175,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 829044359}
     m_Modifications:
+    - target: {fileID: 1706979742489646561, guid: ee41645e5eff8d64390b44fb31445f07, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706979742489646561, guid: ee41645e5eff8d64390b44fb31445f07, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706979742489646561, guid: ee41645e5eff8d64390b44fb31445f07, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6436045486580842005, guid: ee41645e5eff8d64390b44fb31445f07, type: 3}
       propertyPath: m_Name
       value: PlayerShip
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436045486580842006, guid: ee41645e5eff8d64390b44fb31445f07, type: 3}
+      propertyPath: speed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6436045486580842007, guid: ee41645e5eff8d64390b44fb31445f07, type: 3}
       propertyPath: m_RootOrder
@@ -2223,6 +2239,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7992551236190120025, guid: ee41645e5eff8d64390b44fb31445f07, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1498477368}
     - target: {fileID: 7992551236190120025, guid: ee41645e5eff8d64390b44fb31445f07, type: 3}
       propertyPath: maxHitPoints
       value: 10
