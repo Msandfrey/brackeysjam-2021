@@ -94,11 +94,12 @@ namespace IndieWizards.Enemy
             }
             //animation for change
             enemyAnimationController.SetForm((int)currentEnemyType);
+            ChangeGun();
         }
 
         void ChangeGun()
         {
-            currentGun = gunList[(int)currentEnemyType];
+            currentGun = gunList[Random.Range(0, 4)];
         }
 
         void ChangeBullets()
