@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Yellow_Bullet
+  m_Name: Green_Bullet
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION
   m_LightmapFlags: 2
@@ -74,6 +74,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 1, g: 0.83153844, b: 0, a: 0.49019608}
-    - _EmissionColor: {r: 0.5019608, g: 0.3372549, b: 0.1254902, a: 1}
+    - _Color: {r: 0.055535786, g: 0.3018868, b: 0.06482397, a: 0.49019608}
+    - _EmissionColor: {r: 0.29192176, g: 0.5943396, b: 0.16540584, a: 1}
   m_BuildTextureStacks: []
