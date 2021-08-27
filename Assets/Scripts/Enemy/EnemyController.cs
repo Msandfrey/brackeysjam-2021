@@ -45,6 +45,7 @@ namespace IndieWizards.Enemy
         private Fire currentGun;
         private EnemyAnimationController enemyAnimationController;
         private Health health;
+        private AudioManager audioManager;
         // Start is called before the first frame update
         void Start()
         {
@@ -53,7 +54,7 @@ namespace IndieWizards.Enemy
             health = GetComponent<Health>();
             health.onDeath += HandleDeath;
             health.onDamage += HandleDamage;
-
+            audioManager = FindObjectOfType<AudioManager>();
             HandleChange((int)currentEnemyType);
             //continually fire
             StartCoroutine(FireWeapon());
@@ -94,7 +95,7 @@ namespace IndieWizards.Enemy
             }
             //animation for change
             enemyAnimationController.SetForm((int)currentEnemyType);
-            ChangeGun();
+            audioManager.PlayTransformationSound();
         }
 
         void ChangeGun()
@@ -149,8 +150,21 @@ namespace IndieWizards.Enemy
 
         IEnumerator FireWeapon()
         {
+            int count = 1;
             yield return new WaitForSeconds(fireRate);
-            currentGun.Shoot(bulletDamage, false, currentBullet);//second damage needs to be a heal
+            if(count < 3)
+            {
+                audioManager.ShootingSound2();
+                currentGun.Shoot(bulletDamage, false, currentBullet);//second damage needs to be a heal
+                count++;
+            }
+            else
+            {
+                audioManager.ShootingSound1();
+                currentGun.Shoot(bulletDamage, false, currentBullet);//second damage needs to be a heal
+                count = 1;
+            }
+            
             StartCoroutine(FireWeapon());
         }
 
@@ -163,6 +177,7 @@ namespace IndieWizards.Enemy
 
         void HandleDeath()//handles death on no hp to get points
         {
+            audioManager.PlayShipExplosionSound();
             gameManager.AddToScore(scoreValue);
             gameManager.RemoveEnemy(this.gameObject);
             Destroy(this.gameObject);

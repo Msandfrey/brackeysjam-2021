@@ -16,7 +16,12 @@ namespace IndieWizards.Player
         private float rotationStep;
         [SerializeField]
         private GameObject Player;
+        private AudioManager audioManager;
         // Start is called before the first frame update
+        private void Start() 
+        {
+            audioManager = FindObjectOfType<AudioManager>();
+        }
         // Update is called once per frame
         void Update()
         {
@@ -41,6 +46,7 @@ namespace IndieWizards.Player
         public void BeASpin()
         {
             if (isSpinning) { return; }
+            audioManager.PlayHitInCircleSound();
             currRotation = startRotation;
             spinCount++;
             isSpinning = true;

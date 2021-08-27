@@ -35,12 +35,15 @@ namespace IndieWizards.Player
         private Color form2;
         [SerializeField]
         private Color form3;
+
+        private AudioManager audioManager;
         // Start is called before the first frame update
         void Start()
         {
             animationController = GetComponent<EnemyAnimationController>();
             GetComponent<SkinnedMeshRenderer>().material.color = form0;
             gameManager = FindObjectOfType<GameManager>();
+            audioManager = FindObjectOfType<AudioManager>();
             health = GetComponent<Health>();
             health.onDeath += HandleDeath;
             ChangeFireMode(0);
@@ -49,12 +52,21 @@ namespace IndieWizards.Player
         // Update is called once per frame
         void Update()
         {
-            //if(currentFireMode != fireModes[(int)fireMode]) ChangeFireMode(); //should be in trigger when implemented
-            if (Input.GetKeyDown(KeyCode.Space)) currentFireMode.Shoot(damage, false, bullet);//second damage needs to be heal TODO
+            Shooting();
         }
 
+        public void Shooting()
+        {
+            //if(currentFireMode != fireModes[(int)fireMode]) ChangeFireMode(); //should be in trigger when implemented
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                audioManager.ShootingSound2();
+                currentFireMode.Shoot(damage, false, bullet);//second damage needs to be heal TODO
+            }
+        }
         void HandleDeath()
         {
+            audioManager.PlayShipExplosionSound();
             gameManager.EndGame();
         }
 

@@ -2190,8 +2190,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 349223601ea89254d8dff3d290e5a7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxAudioSource: {fileID: 0}
-  explosionSound: {fileID: 0}
+  sfxAudioSource: {fileID: 1476028790}
+  shootingSound1: {fileID: 8300000, guid: f080c8b606a209b4ab832c2081934288, type: 3}
+  shootingSound2: {fileID: 8300000, guid: 1a3c2e6f7195bc24a97f991539ba477f, type: 3}
+  explosionSound: {fileID: 8300000, guid: 80110d77bc74aaf4c9eb0a5af5ae805b, type: 3}
+  transformationSound: {fileID: 8300000, guid: 358400a85192a404ea4c90ff6c7bef9d, type: 3}
+  hitIntoCircleSound: {fileID: 8300000, guid: 708c40b39f6a77e4b922bfbaf718f00f, type: 3}
+  playerHitSound: {fileID: 8300000, guid: 510dcb1bc346a6f4ab26e3b401b27711, type: 3}
+  playerHealSound: {fileID: 8300000, guid: 88042c369626f27428e56fa83e3ed5a9, type: 3}
 --- !u!82 &1476028790
 AudioSource:
   m_ObjectHideFlags: 0
