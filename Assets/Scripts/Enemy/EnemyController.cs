@@ -100,7 +100,7 @@ namespace IndieWizards.Enemy
 
         void ChangeGun()
         {
-            currentGun = gunList[Random.Range(0, 4)];
+            currentGun = gunList[Random.Range(0, 5)]; 
         }
 
         void ChangeBullets()
@@ -150,21 +150,9 @@ namespace IndieWizards.Enemy
 
         IEnumerator FireWeapon()
         {
-            int count = 1;
             yield return new WaitForSeconds(fireRate);
-            if(count < 3)
-            {
-                audioManager.ShootingSound2();
-                currentGun.Shoot(bulletDamage, false, currentBullet);//second damage needs to be a heal
-                count++;
-            }
-            else
-            {
-                audioManager.ShootingSound1();
-                currentGun.Shoot(bulletDamage, false, currentBullet);//second damage needs to be a heal
-                count = 1;
-            }
-            
+            audioManager.ShootingSound2();
+            currentGun.Shoot(bulletDamage, false, currentBullet);//second damage needs to be a heal
             StartCoroutine(FireWeapon());
         }
 

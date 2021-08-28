@@ -14,16 +14,15 @@ namespace IndieWizards.Character
         private float LaunchForce = 1000;
         [SerializeField]
         private float ForceMultiplier = 1;
-        [SerializeField]
         Rigidbody m_Rigidbody;
         [SerializeField]
         private float fireRate = 0.1f;
-        [SerializeField]
         private float lastTime = 0f;
-        [SerializeField]
         private float sineValue;
-        [SerializeField]
         private float shootingDuration = 0f;
+        [SerializeField]
+        private GameObject Player;
+        
         // Start is called before the first frame update
         void Start()
         {
@@ -33,37 +32,34 @@ namespace IndieWizards.Character
         // Update is called once per frame
         void Update()
         {
-            float waitTime = Time.time - lastTime;
-        
-            Vector3 thisRotation = this.gameObject.transform.rotation.eulerAngles;
-            if (Input.GetKey(KeyCode.Space))
-            {
-                shootingDuration += Time.deltaTime;
-                transform.Rotate(new Vector3(0, 0, .085f * Mathf.Cos(shootingDuration)));
-                sineValue = Mathf.Sin(shootingDuration);
-
-                if(waitTime > fireRate)
-                {
-                    GameObject projectileInstance = Instantiate(projectile, spawnPoint.position, spawnPoint.localRotation);
-                    m_Rigidbody = projectileInstance.GetComponent<Rigidbody>();
-                    m_Rigidbody.AddForce(spawnPoint.right * LaunchForce * ForceMultiplier);
-
-                    lastTime = Time.time;
-                }
-            }
-        
-        
-        
-            if(waitTime > 1.5f)
-            {
-                transform.rotation = Quaternion.identity;
-                shootingDuration = 0;
-            }
+            
         }
 
         public override void Shoot(int damageHealValue, bool isHealing, GameObject bulletToShoot)
         {
+            // waitTime = Time.time - lastTime;
 
+            // Vector3 thisRotation = this.gameObject.transform.rotation.eulerAngles;
+            // shootingDuration += Time.deltaTime;
+            
+
+            
+            GameObject projectileInstance = Instantiate(bulletToShoot, spawnPoint.position, spawnPoint.localRotation);
+            projectileInstance.GetComponent<Bullets>().SetDamage(damageHealValue);
+            projectileInstance.GetComponent<Bullets>().SetHealAmount(damageHealValue);
+            projectileInstance.GetComponent<Bullets>().SetOwner(Player);
+            m_Rigidbody = projectileInstance.GetComponent<Rigidbody>();
+            m_Rigidbody.AddForce(spawnPoint.right * LaunchForce * ForceMultiplier);
+
+            
+            transform.Rotate(new Vector3(0, 0, 5 * Mathf.Cos(shootingDuration)));
+            shootingDuration += 1/360;
+
+            // if (waitTime > 1.5f)
+            // {
+            //     transform.rotation = Quaternion.identity;
+            //     shootingDuration = 0;
+            // }
         }
     }
 }
