@@ -881,9 +881,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 7209064194344666876, guid: 0ba501369cc695040a646d26ccc2caf9, type: 3}
-  spawnPoint1: {fileID: 7536643861436128979}
+  spawnPoint1: {fileID: 8123361234230122866}
   spawnPoint2: {fileID: 3860504857930321256}
-  spawnPoint3: {fileID: 8123361234230122866}
+  spawnPoint3: {fileID: 7536643861436128979}
   spawnPoint4: {fileID: 3923824323508645004}
   LaunchForce: 1000
   ForceMultiplier: 1
