@@ -28,6 +28,7 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         
+        
     }
 
     // Update is called once per frame
@@ -38,10 +39,15 @@ public class AudioManager : MonoBehaviour
 
     public void PlayChaosTheme()
     {
-        sfxAudioSource.GetComponent<AudioSource>().enabled = true;
-        brackeyesBGM.GetComponent<AudioSource>().enabled = false;
+        AudioSource audio = sfxAudioSource.GetComponent<AudioSource>();
+        audio.Play(0);
+        
     }
 
+    public void TurnOffBrakceyesTheme()
+    {
+        brackeyesBGM.GetComponent<AudioSource>().Stop();
+    }
     public void PlayShipExplosionSound()
     {
         sfxAudioSource.PlayOneShot(explosionSound);

@@ -28,9 +28,15 @@ namespace IndieWizards.Character
                 {
                     other.GetComponent<Health>().TakeDamage(damage);
                     audioManager.PlayPlayerHitSound();
-                    Destroy(gameObject);    
-                    
+                    Destroy(gameObject);
                 }
+                return;    
+            }
+            if (other.tag.Equals("Player"))
+            {
+                other.GetComponent<Health>().TakeDamage(damage);
+                audioManager.PlayPlayerHitSound();
+                Destroy(gameObject);
             }
         }
     }
