@@ -15,8 +15,6 @@ namespace IndieWizards.Character
         [SerializeField]
         private float ForceMultiplier = 1;
         Rigidbody m_Rigidbody;
-        [SerializeField]
-        private float fireRate = 0.1f;
         private float lastTime = 0f;
         private float sineValue;
         private float shootingDuration = 0f;

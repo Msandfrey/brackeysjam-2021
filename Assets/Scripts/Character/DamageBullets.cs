@@ -13,6 +13,7 @@ namespace IndieWizards.Character
         {
             audioManager = FindObjectOfType<AudioManager>();
         }
+
         private void OnTriggerEnter(Collider other)
         {
             if(other != null && owner != null)

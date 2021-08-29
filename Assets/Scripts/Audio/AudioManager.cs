@@ -7,6 +7,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     AudioSource sfxAudioSource;
     [SerializeField]
+    AudioSource brackeyesBGM;
+    [SerializeField]
     AudioClip shootingSound1;
     [SerializeField]
     AudioClip shootingSound2;
@@ -32,6 +34,12 @@ public class AudioManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void PlayChaosTheme()
+    {
+        sfxAudioSource.GetComponent<AudioSource>().enabled = true;
+        brackeyesBGM.GetComponent<AudioSource>().enabled = false;
     }
 
     public void PlayShipExplosionSound()
