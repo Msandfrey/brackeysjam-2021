@@ -632,7 +632,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1476028789}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: playChaosTheme
+        m_MethodName: PlayChaosTheme
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2341,7 +2341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 349223601ea89254d8dff3d290e5a7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxAudioSource: {fileID: 1476028790}
+  sfxAudioSource: {fileID: 1524655265}
   brackeyesBGM: {fileID: 136289012}
   shootingSound1: {fileID: 8300000, guid: f080c8b606a209b4ab832c2081934288, type: 3}
   shootingSound2: {fileID: 8300000, guid: 1a3c2e6f7195bc24a97f991539ba477f, type: 3}
@@ -2609,12 +2609,12 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1524655264}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c0e4d650118596f4792ad794f57f8177, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.6
+  m_PlayOnAwake: 0
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
