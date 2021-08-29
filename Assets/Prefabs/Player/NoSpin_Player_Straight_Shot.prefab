@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 476630216}
   - component: {fileID: 476630217}
   m_Layer: 0
-  m_Name: Player_Straight_Shot
+  m_Name: NoSpin_Player_Straight_Shot
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,8 +226,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.2, y: 1, z: 0.9}
+  m_Center: {x: 0, y: 0, z: -0.1}
 --- !u!114 &8593577326933439493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,8 +238,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7477b5fc8d7ca524da8e8d847b76eba7, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   speed: 10
 --- !u!114 &2436614760658994991
 MonoBehaviour:
@@ -251,8 +251,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18b61747d3d12fe4297b0b07ee5d06af, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   damage: 1
   fireModes:
   - {fileID: 476630213}
@@ -261,7 +261,11 @@ MonoBehaviour:
   - {fileID: 476630216}
   - {fileID: 476630217}
   bullet: {fileID: 7209064194344666876, guid: 0ba501369cc695040a646d26ccc2caf9, type: 3}
-  shipColor: {r: 0.1, g: 0.53, b: 0.71, a: 1}
+  animationController: {fileID: 0}
+  form0: {r: 0, g: 0, b: 0, a: 0}
+  form1: {r: 0, g: 0, b: 0, a: 0}
+  form2: {r: 0, g: 0, b: 0, a: 0}
+  form3: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &4054400862585441892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,8 +276,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fda4799d7ce56848a3298ac9b8084d9, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  currentHitPoints: 0
   maxHitPoints: 4
 --- !u!114 &476630213
 MonoBehaviour:
@@ -285,8 +291,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c5946c7739119d49af01e4ff94c9918, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   spawnPoint: {fileID: 2436614762402738709}
   LaunchForce: 1000
   ForceMultiplier: 1
@@ -301,8 +307,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bebdabace2be52b4580caddb319140b9, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   projectile: {fileID: 7209064194344666876, guid: 0ba501369cc695040a646d26ccc2caf9, type: 3}
   spawnPointTop: {fileID: 3588060594069588123}
   spawnPointBot: {fileID: 4166019599242492868}
@@ -319,8 +325,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d065b5baadd0ecf448279814a8a3959f, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   projectile: {fileID: 7209064194344666876, guid: 0ba501369cc695040a646d26ccc2caf9, type: 3}
   spawnPoint1: {fileID: 2436614762402738709}
   spawnPoint2: {fileID: 6391303626346958322}
@@ -338,8 +344,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5a5a890ee0a85540a3a4221fef477db, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   projectile: {fileID: 7209064194344666876, guid: 0ba501369cc695040a646d26ccc2caf9, type: 3}
   spawnPoint1: {fileID: 6391303626346958322}
   spawnPoint2: {fileID: 1069450906107163129}
@@ -358,8 +364,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c30c986b4eb5b74083d518fd9031734, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   projectile: {fileID: 7209064194344666876, guid: 0ba501369cc695040a646d26ccc2caf9, type: 3}
   spawnPoint1: {fileID: 2436614762402738709}
   spawnPoint2: {fileID: 6391303626346958322}

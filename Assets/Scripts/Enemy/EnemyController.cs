@@ -4,6 +4,7 @@ using UnityEngine;
 using IndieWizards.GameManagement;
 using IndieWizards.Character;
 using IndieWizards.Animation;
+using IndieWizards.Player;
 
 namespace IndieWizards.Enemy
 {
@@ -177,6 +178,7 @@ namespace IndieWizards.Enemy
             {
                 other.GetComponent<Health>().TakeDamage(bulletDamage);
                 GetComponent<Health>().TakeDamage(1);
+                other.GetComponent<Spin>().BeASpin();
             }
         }
     }
