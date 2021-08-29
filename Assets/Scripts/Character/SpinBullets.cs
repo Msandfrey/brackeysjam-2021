@@ -7,6 +7,12 @@ namespace IndieWizards.Character
 {
     public class SpinBullets : Bullets
     {
+        private AudioManager audioManager;
+
+        private void Start()
+        {
+            audioManager = FindObjectOfType<AudioManager>();
+        }
         private void OnTriggerEnter(Collider other)
         {
             if(other != null && owner != null)
@@ -17,6 +23,14 @@ namespace IndieWizards.Character
                     Destroy(gameObject);
                     
                 }
+                return;
+            }
+
+            if (other.tag.Equals("Player"))
+            {
+                other.GetComponent<Health>().TakeDamage(damage);
+                audioManager.PlayPlayerHitSound();
+                Destroy(gameObject);
             }
         }
     }

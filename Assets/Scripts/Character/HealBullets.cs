@@ -8,10 +8,11 @@ namespace IndieWizards.Character
     public class HealBullets : Bullets
     {
         private AudioManager audioManager;
-        private void Start() 
+
+        private void Start()
         {
-            audioManager = FindObjectOfType<AudioManager>();    
-        }
+            audioManager = FindObjectOfType<AudioManager>();
+        }        
         private void OnTriggerEnter(Collider other)
         {
             if (other != null && owner != null)
@@ -27,8 +28,15 @@ namespace IndieWizards.Character
                     other.GetComponent<Health>().RestoreHealth(amountHealed);
                     audioManager.PlayHealingSound();
                     Destroy(gameObject);
-                    
                 }
+                return;
+            }
+
+            if (other.tag.Equals("Player"))
+            {
+                other.GetComponent<Health>().RestoreHealth(amountHealed);
+                audioManager.PlayHealingSound();
+                Destroy(gameObject);
             }
         }
     }
