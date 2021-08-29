@@ -653,7 +653,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8771048712263605749}
   - component: {fileID: 7135969229376923816}
-  - component: {fileID: 2733248879827228224}
   m_Layer: 6
   m_Name: Gun1
   m_TagString: Untagged
@@ -690,24 +689,6 @@ MonoBehaviour:
   spawnPoint: {fileID: 8771048712263605749}
   LaunchForce: 1000
   ForceMultiplier: 1
-  Player: {fileID: 269886874176662814}
---- !u!114 &2733248879827228224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7419734500148863732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b53b3d95ad38a541a918d9836d4c87d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  LaunchForce: 1000
-  ForceMultiplier: 1
-  fireRate: 0.1
   Player: {fileID: 269886874176662814}
 --- !u!1 &7639117619940367409
 GameObject:

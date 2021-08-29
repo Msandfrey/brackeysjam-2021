@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using IndieWizards.GameManagement;
+using IndieWizards.Character;
 
 namespace IndieWizards.Player
 {
@@ -18,11 +19,14 @@ namespace IndieWizards.Player
 
         [SerializeField]
         private GameObject _camera; //Unity doesn't like "camera"
+        [SerializeField]
+        private AudioManager audioManager;
 
         void Start()
         {
             gameManager = FindObjectOfType<GameManager>();
             _camera = FindObjectOfType<Camera>().gameObject;
+            audioManager = FindObjectOfType<AudioManager>();
         }
 
         // Update is called once per frame
@@ -40,6 +44,10 @@ namespace IndieWizards.Player
                 Destroy(this.gameObject, 0.1f);
                 RemoveFromGame();
                 _camera.GetComponent<WorldRotationManager>().SmoothRotate();
+
+                Health health = other.gameObject.GetComponent<Health>();
+                audioManager.PlayHealingSound();
+                health.RestoreHealth(health.maxHitPoints);
             }
         }
 

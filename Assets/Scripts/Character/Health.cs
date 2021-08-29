@@ -18,9 +18,9 @@ namespace IndieWizards.Character
         //[SerializeField]
         //private int initialHitPoints = 1;
         [SerializeField]
-        private int currentHitPoints;
+        public int currentHitPoints;
         [SerializeField]
-        private int maxHitPoints = 1;
+        public int maxHitPoints = 1;
 
 
         // Used to make sure we only trigger onDeath once
@@ -54,7 +54,7 @@ namespace IndieWizards.Character
             if (healthBar) { AdjustHealthBar(); }
         }
 
-        void AdjustHealthBar()
+        public void AdjustHealthBar()
         {
             float hpPercentage = currentHitPoints / maxHitPoints;
             healthBar.GetComponent<Slider>().value = currentHitPoints;
